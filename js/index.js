@@ -58,6 +58,10 @@ welcomeToFunBus.addEventListener('mouseout', ()=>{
 
 
 
+let dragP = document.querySelector('.intro p')
+dragP.addEventListener("drag", ()=>{
+    dragP.style.color = "red";
+  });
 
 
 
