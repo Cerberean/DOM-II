@@ -1,15 +1,5 @@
 // Your code goes here
 
-// keydown
-// wheel
-// drag & drop
-// load
-// focus
-// resize
-// scroll
-// select
-// double click
-
 
 
 const navBar = document.querySelector('nav');
@@ -23,85 +13,64 @@ navBar.addEventListener('mouseleave',()=>{
     navBar.style.backgroundColor = "white";
 });
 
-const anchors = document.querySelectorAll('a');
-
-
 
 const funbusLogo = document.querySelector('.logo-heading');
+document.addEventListener("click", ()=>{
+    document.querySelector(".logo-heading").innerHTML = "Hello World";
+  });
 
-funbusLogo.addEventListener('mouseover', ()=>{
-    funbusLogo.style.transition="0.5s";
-    funbusLogo.style.fontSize = "7rem";
+
+
+  const changeBodyColor = document.querySelector('body');
+
+  changeBodyColor.addEventListener('keypress', ()=>{
+     
+      changeBodyColor.style.backgroundColor = 'yellow'; 
+  });
+  
+
+
+  window.addEventListener('load', ()=> {
+      alert('Fun Bus Website Loaded'); 
+  });
+
+
+
+const copyWelcomeP = document.querySelector('.intro p')
+
+copyWelcomeP.addEventListener('copy', () => {    
+    alert("You copied the paragraph from Welcome to Fun Bus!");
+}); 
+
+
+
+const welcomeToFunBus = document.querySelector('.intro h2');
+
+welcomeToFunBus.addEventListener('mouseover', ()=>{
+    welcomeToFunBus.style.transition='1s';
+    welcomeToFunBus.style.fontSize = '4.5rem';
 });
 
-funbusLogo.addEventListener('mouseout', ()=>{
-    funbusLogo.style.transition="2s";
-    funbusLogo.style.fontSize = "5rem";
+welcomeToFunBus.addEventListener('mouseout', ()=>{
+    welcomeToFunBus.style.transition='1s';
+    welcomeToFunBus.style.fontSize='3.2rem';
+})
+
+
+
+
+
+
+const btnDblClick = document.querySelectorAll('.content-pick .destination .btn'); 
+
+btnDblClick[0].addEventListener("dblclick", ()=>{
+    document.location.href = 'http://www.waverlyclt.com/wp-content/uploads/2018/05/home-image-1200x675.jpg';  
 });
 
-funbusLogo.addEventListener('transitionstart', ()=>{
-    contentImg[0].style.transition = "4s";
-    contentImg[0].style.width = "40%";
+btnDblClick[1].addEventListener("dblclick", ()=>{
+    document.location.href = 'https://cdn.pixabay.com/photo/2017/09/02/01/25/walk-2706093_960_720.jpg';
 });
 
-funbusLogo.addEventListener('transitionend', ()=>{
-    contentImg[0].style.transition = "2s";
-    contentImg[0].style.width = "100%";
-});
-
-
-
-const introImg = document.querySelector('.intro img');
-
-introImg.addEventListener("drag", ()=>{
-    introText.style.transition = "2s";
-    introText.style.color = "blue";
-});
-
-introImg.addEventListener("dragend", ()=>{
-    introText.style.transition = "2s";
-    introText.style.color = "black";
-});
-
-
-
-const introText = document.querySelector('.intro p');
-
-const introTextWords = introText.innerText;
-
-introText.addEventListener("dblclick", ()=>{
-    const introTextInner = introText.innerText;
-    const textInterval = setInterval(()=>{
-        introText.innerText = introTextInner;
-        introTextInner = introTextInner.slice(0,-1);
-        if(introTextInner.length == 0){
-            introText.innerText = introTextWords;
-            clearInterval(textInterval);
-        }
-    }, 50);
-});
-
-
-
-const contentImg = document.querySelectorAll('.content-section img');
-
-const lorem = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis minima aliquid, voluptatem deleniti nesciunt repellat eius explicabo culpa qui vero ex laborum sit at fuga repudiandae assumenda amet nisi hic."
-
-
-
-const focusP = document.querySelectorAll('.focus p');
-
-focusP[0].addEventListener('contextmenu', ()=>{
-    focusP[0].innerText = lorem;
-});
-
-focusP[1].addEventListener('click', (event)=>{
-    focusP[1].innerText = "Propagation has been stopped!";
-    event.stopPropagation()
-});
-
-const propa = document.querySelector('.text-content.focus');
-
-propa.addEventListener('click', ()=>{
-    TweenMax.to(focusP, 6, {color:"red", backgroundColor: "purple"});
+btnDblClick[2].addEventListener('dblclick', ()=>{
+    document.location.href = 'https://cdn.hswstatic.com/gif/10-island-getaways-1.jpg';
 });
